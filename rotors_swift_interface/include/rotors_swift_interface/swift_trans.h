@@ -24,7 +24,7 @@
 
 #include <geometry_msgs/PoseStamped.h>
 
-#include <swift_client/swift_msgs.h>
+#include <swift_msgs/swift_msgs.h>
 #include <mav_msgs/RollPitchYawrateThrust.h>
 #include <ros/ros.h>
 #include <ros/console.h>
@@ -66,7 +66,7 @@ class swift_Trans {
   double thrust_weight_offset_newtons_;
   void StopMav();
 
-  void TransCallback(const swift_client::swift_msgs::ConstPtr& msg);
+  void TransCallback(const swift_msgs::swift_msgs::ConstPtr& msg);
 
  public:
   swift_Trans();

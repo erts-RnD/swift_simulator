@@ -6,7 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   mav_msgs
   trajectory_msgs
-  swift_client
+  swift_msgs
 
 )
 include_directories(include ${catkin_INCLUDE_DIRS})
@@ -14,7 +14,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 catkin_package(
   DEPENDS
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp geometry_msgs mav_msgs trajectory_msgs swift_client
+  CATKIN_DEPENDS roscpp geometry_msgs mav_msgs trajectory_msgs swift_msgs
   LIBRARIES
 )
 

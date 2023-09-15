@@ -43,7 +43,7 @@ void swift_Trans::StopMav() {
   control_msg_.thrust.z = 0;
 }
 
-void swift_Trans::TransCallback(const swift_client::swift_msgs::ConstPtr& msg) {
+void swift_Trans::TransCallback(const swift_msgs::swift_msgs::ConstPtr& msg) {
   control_msg_.roll = ((msg->rcRoll-1500) * max_.roll/div_factor)*axes_.roll_direction;
   control_msg_.pitch = ((msg->rcPitch-1500) * max_.pitch/div_factor)* axes_.pitch_direction;
   control_msg_.yaw_rate = current_yaw_vel_;
