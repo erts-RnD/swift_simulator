@@ -20,7 +20,7 @@
 	<!-- <xacro:include filename="$(find rotors_description)/urdf/materials.urdf.xacro"/> -->
 	<xacro:macro name="whycon_marker" params="namespace marker_width marker_radius marker">
 		<joint name="${marker}_joint" type="fixed">
-			<origin xyz="0 0 0.041" rpy="0 0 0"/>
+			<origin xyz="0.04 0 0.06" rpy="0 0 0"/>
 
 			<parent link="${namespace}/base_link"/>
 			<child link="${marker}_link"/>
@@ -28,9 +28,9 @@
 		<link name="${marker}_link">
 
 				<visual name='Whycon_Marker'>
-					<origin xyz="-.063 0 0" rpy="0 1.570796327 0"/>
+					<origin xyz="-.043 0 0.0005" rpy="0 0 0"/>
 					<geometry>
-						<mesh filename="package://rotors_description/models/whycon_marker/meshes/whycon_marker.dae" scale="0.25 0.25 0.25"/>
+						<mesh filename="package://rotors_description/models/whycon_marker/meshes/whycon_marker.dae"/>
 	
 					</geometry>
 	

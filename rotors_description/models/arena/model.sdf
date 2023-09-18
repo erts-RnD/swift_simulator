@@ -8,7 +8,7 @@
           <geometry>
             <mesh>
               <uri>model://arena/arena.obj</uri>
-              <scale>2 2 2</scale>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </visual>

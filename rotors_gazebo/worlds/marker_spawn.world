@@ -54,7 +54,7 @@
 			</link>
 			<!-- camera -->
 			<link name='camera_link'>
-				<pose>0 0 2.4384 0 1.57 1.57</pose> <!-- camera placed at a heigth of 8 feet-->
+				<pose>0 0 3.048 0 1.57 1.57</pose> <!-- camera placed at a heigth of 10 feet-->
 				<inertial>
 					<mass>0.1</mass>
 					<inertia>
@@ -92,10 +92,10 @@
 				</visual>
 				<sensor name='camera' type='camera'>
 					<camera name='overhead_cam'>
-						<horizontal_fov>1.0</horizontal_fov>
+						<horizontal_fov>0.8</horizontal_fov>
 						<image>
-							<width>1280</width>
-							<height>1280</height>
+							<width>950</width>
+							<height>950</height>
 						</image>
 						<clip>
 							<near>0.1</near>

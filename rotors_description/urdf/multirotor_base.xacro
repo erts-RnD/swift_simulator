@@ -42,8 +42,8 @@
 			<link name="${robot_namespace}/base_link"></link>
 
 			<joint name="${robot_namespace}/base_joint" type="fixed">
-				<origin xyz="0 0 0" rpy="0 0 0" />
-				<parent link="${robot_namespace}/base_link" />
+				<origin xyz="0 0 0.04" rpy="0 0 3.1415926" />
+				<parent link="${robot_namespace}/base_link" />	
 				<child link="${robot_namespace}/base_link_inertia" />
 			</joint>
 
@@ -58,7 +58,7 @@
 					<origin xyz="0 0 0" rpy="0 0 0" />
 					<geometry>
 						<xacro:if value="${use_mesh_file}">
-							<mesh filename="${mesh_file}" scale="1 1 1" />
+							<mesh filename="${mesh_file}" scale="0.001 0.001 0.001" />
 						</xacro:if>
 						<xacro:unless value="${use_mesh_file}">
 							<box size="${body_width} ${body_width} ${body_height}"/> <!-- [m] [m] [m] -->
@@ -112,7 +112,7 @@
 						</xacro:if>
 						<xacro:unless value="${use_own_mesh}">
 							<mesh filename="package://rotors_description/meshes/propeller_${direction}.dae"
-								scale="${radius_rotor} ${radius_rotor} ${radius_rotor}" /> <!-- The propeller meshes have a radius of 1m -->
+								scale="0.001 0.001 0.001" /> <!-- The propeller meshes have a radius of 1m -->
 								<!-- <box size="${2*radius_rotor} 0.01 0.005"/> -->
 							</xacro:unless>
 						</geometry>
@@ -159,13 +159,6 @@
 				</joint>
 				<link name="${robot_namespace}/motor_${motor_number}">
 				
-					<visual>
-						<geometry>
-					<mesh filename="package://rotors_description/meshes/swift_motor.stl"
-scale="0.002769 0.002769 0.002769" />
-							
-</geometry>
-</visual>
 </link>
 </xacro:macro>
 </robot>
