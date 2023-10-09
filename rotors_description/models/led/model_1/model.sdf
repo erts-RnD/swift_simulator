@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+    <model name="led">
+      <pose>0 0 0 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual1">
+          <pose>0 0 0.002 1.57 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://led/meshes/led.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+        </visual>
+
+        <visual name="visual2">
+          <pose>0.026382 0.011354 0.002 1.57 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://led/meshes/led.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+</sdf>
