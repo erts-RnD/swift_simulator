@@ -138,10 +138,22 @@
 			<pose>0 0 0.001 0 0 0</pose>
 		</include>
 
+		<include>
+			<uri>model://led/model_1</uri>
+			<name>led_1</name>
+			<pose>0.338393 -0.450683 0 0 0 0</pose>
+		</include>
+
        <include>
 			<uri>model://led/model_2</uri>
 			<name>led_2</name>
 			<pose>0.335962 0.670160 0 0 0 0</pose>
+		</include>
+		
+        <include>
+			<uri>model://led/model_3</uri>
+			<name>led_3</name>
+			<pose>-0.684642 -0.318091 0 0 0 0</pose>
 		</include>
 		
 		<!-- Only one ROS interface plugin is required per world, as any other plugin can connect a Gazebo
