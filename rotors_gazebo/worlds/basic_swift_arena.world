@@ -6,66 +6,15 @@
           <origin_visual>false</origin_visual>
 
 	      <sky>
-	        <clouds>
-	          <speed>4</speed>
-	        </clouds>
+		  	<time>0</time>
 	      </sky>
 	    </scene>   
-?
 
-		<!-- <include>
-			<uri>model://ground_plane</uri>
-		</include> -->
-
-		<model name='ground_plane'>
+		<model name='sat_camera'>
+		<pose>0 0 3.048 0 0 0</pose>
 			<static>1</static>
-			<link name='link'>
-				<collision name='collision'>
-					<geometry>
-						<plane>
-							<normal>0 0 1</normal>
-							<size>100 100</size>
-						</plane>
-					</geometry>
-					<surface>
-						<friction>
-							<ode>
-								<mu>100</mu>
-								<mu2>50</mu2>
-							</ode>
-						</friction>
-						<bounce/>
-						<contact>
-							<ode/>
-						</contact>
-					</surface>
-					<max_contacts>10</max_contacts>
-				</collision>
-				<visual name='visual'>
-					<cast_shadows>0</cast_shadows>
-					<geometry>
-						<plane>
-							<normal>0 0 1</normal>
-							<size>100 100</size>
-						</plane>
-					</geometry>
-					<material>
-						<script>
-							<uri>file://media/materials/scripts/gazebo.material</uri>
-							<name>Gazebo/Grey</name>
-						</script>
-					</material>
-				</visual>
-				<velocity_decay>
-					<linear>0</linear>
-					<angular>0</angular>
-				</velocity_decay>
-				<self_collide>0</self_collide>
-				<kinematic>0</kinematic>
-				<gravity>1</gravity>
-			</link>
 			<link name='camera_link'>
-				<pose>0 0 3.048 0 1.57 1.57</pose> <!-- camera placed at a heigth of 16 feet-->
+				<pose>0 0 0 0 1.57 1.57</pose> <!-- camera placed at a heigth of 16 feet-->
 				<inertial>
 					<mass>0.1</mass>
 					<inertia>
@@ -95,10 +44,11 @@
 					</surface>
 				</collision>
 				<visual name='visual'>
+				<pose>0 0 0.3 0. -1.57 -1.57</pose>
 					<geometry>
-						<box>
-							<size>0.001 0.001 0.001</size>
-						</box>
+						<mesh>
+						<uri>model://sat_cam/sat_cam.obj</uri>
+						</mesh>
 					</geometry>
 				</visual>
 				<sensor type='camera' name='camera'>
@@ -112,7 +62,6 @@
 							<near>0.1</near>
 							<far>5</far>
 						</clip>
-
 					</camera>
 			
 					<plugin name='camera_control' filename='libgazebo_ros_camera.so'>
@@ -124,7 +73,7 @@
 						<frameName>overhead_cam_frame</frameName>
 					</plugin>
 					<always_on>1</always_on>
-					<update_rate>30</update_rate>
+					<update_rate>60</update_rate>
 					<visualize>0</visualize>
 
 				</sensor>
@@ -136,12 +85,6 @@
 		<include>
 			<uri>model://arena</uri>
 			<pose>0 0 0.001 0 0 0</pose>
-		</include>
-
-       <include>
-			<uri>model://led/model_2</uri>
-			<name>led_2</name>
-			<pose>0.335962 0.670160 0 0 0 0</pose>
 		</include>
 		
 		<!-- Only one ROS interface plugin is required per world, as any other plugin can connect a Gazebo
